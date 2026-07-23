@@ -207,6 +207,41 @@
   .post-card p{ font-size:0.95rem; color:#4a3f30; }
   .post-card .date{ font-size:0.82rem; color:#8a7c63; margin-top:auto; }
 
+  .article{ padding-top:1rem; }
+  .back-link{
+    display:inline-block;
+    color:var(--maroon);
+    text-decoration:none;
+    font-size:0.9rem;
+    margin-bottom:1.5rem;
+  }
+  .back-link:hover{ text-decoration:underline; }
+  .article-title{
+    font-size:clamp(1.8rem, 4vw, 2.6rem);
+    margin:0.4rem 0 1.6rem;
+    color:var(--ink);
+  }
+  .article-figure{
+    margin-bottom:2rem;
+  }
+  .article-figure svg{
+    width:100%;
+    height:auto;
+    display:block;
+    border:1px solid rgba(36,26,16,0.12);
+  }
+  .article-figure figcaption{
+    font-size:0.85rem;
+    color:#8a7c63;
+    margin-top:0.6rem;
+    font-style:italic;
+  }
+  .article-body p{
+    font-size:1.08rem;
+    margin-bottom:1.2rem;
+    max-width:70ch;
+  }
+
   footer{
     background:var(--night-deep);
     color:var(--paper-dim);
@@ -327,14 +362,14 @@
     <h2 data-en>New posts</h2>
   </div>
   <div class="posts-grid">
-    <div class="post-card">
+    <a href="#stander-bikel" class="post-card" style="text-decoration:none; color:inherit;">
       <span class="post-tag" data-bn>শহর</span><span class="post-tag" data-en>City</span>
       <h3 data-bn>স্ট্র্যান্ডের বিকেল</h3>
       <h3 data-en>An Evening on the Strand</h3>
       <p data-bn>গঙ্গার পাড় ধরে হাঁটতে হাঁটতে চন্দননগরের পুরনো ফরাসি বাড়িগুলো নিয়ে কিছু ভাবনা।</p>
       <p data-en>Some thoughts on Chandannagar's old French houses, while walking along the riverbank.</p>
-      <span class="date" data-bn>শীঘ্রই আসছে</span><span class="date" data-en>Coming soon</span>
-    </div>
+      <span class="date" data-bn>২৩ জুলাই, ২০২৬ · পুরো লেখা পড়ুন →</span><span class="date" data-en>23 July, 2026 · Read full post →</span>
+    </a>
     <div class="post-card">
       <span class="post-tag" data-bn>ব্যক্তিগত</span><span class="post-tag" data-en>Personal</span>
       <h3 data-bn>প্রথম লেখা</h3>
@@ -351,6 +386,78 @@
       <p data-en>Childhood memories and present-day thoughts on the Jagaddhatri Puja light displays.</p>
       <span class="date" data-bn>শীঘ্রই আসছে</span><span class="date" data-en>Coming soon</span>
     </div>
+  </div>
+</section>
+
+<section id="stander-bikel" class="article">
+  <a href="#posts" class="back-link" data-bn>← সব লেখায় ফিরে যান</a>
+  <a href="#posts" class="back-link" data-en>← Back to all posts</a>
+
+  <span class="eyebrow" data-bn>শহর · ২৩ জুলাই, ২০২৬</span>
+  <span class="eyebrow" data-en>City · 23 July, 2026</span>
+  <h2 class="article-title" data-bn>স্ট্র্যান্ডের বিকেল</h2>
+  <h2 class="article-title" data-en>An Evening on the Strand</h2>
+
+  <figure class="article-figure">
+    <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chandannagar Strand-এর সূর্যাস্তের অলঙ্করণ">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3a2f55"/>
+          <stop offset="45%" stop-color="#a8613f"/>
+          <stop offset="100%" stop-color="#f0b866"/>
+        </linearGradient>
+        <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#c98a4f"/>
+          <stop offset="100%" stop-color="#4a3626"/>
+        </linearGradient>
+        <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fff3d0"/>
+          <stop offset="100%" stop-color="#f0c674"/>
+        </radialGradient>
+      </defs>
+      <rect x="0" y="0" width="800" height="220" fill="url(#sky)"/>
+      <circle cx="400" cy="160" r="46" fill="url(#sun)"/>
+      <rect x="0" y="220" width="800" height="140" fill="url(#water)"/>
+      <line x1="0" y1="220" x2="800" y2="220" stroke="#2a1d12" stroke-width="1" opacity="0.4"/>
+      <ellipse cx="400" cy="222" rx="46" ry="6" fill="#f7dca0" opacity="0.5"/>
+      <g fill="#241a10" opacity="0.92">
+        <rect x="40" y="120" width="90" height="100" />
+        <rect x="130" y="100" width="70" height="120" />
+        <rect x="600" y="110" width="80" height="110" />
+        <rect x="680" y="90" width="90" height="130" />
+        <rect x="55" y="140" width="14" height="22" fill="#a8613f"/>
+        <rect x="85" y="140" width="14" height="22" fill="#a8613f"/>
+        <rect x="145" y="125" width="12" height="20" fill="#a8613f"/>
+        <rect x="170" y="125" width="12" height="20" fill="#a8613f"/>
+        <rect x="615" y="130" width="14" height="22" fill="#a8613f"/>
+        <rect x="645" y="130" width="14" height="22" fill="#a8613f"/>
+        <rect x="700" y="115" width="12" height="20" fill="#a8613f"/>
+        <rect x="725" y="115" width="12" height="20" fill="#a8613f"/>
+      </g>
+      <g>
+        <path d="M310,258 Q350,270 390,258 L378,272 L322,272 Z" fill="#1a120a"/>
+        <line x1="350" y1="258" x2="350" y2="232" stroke="#1a120a" stroke-width="2"/>
+        <path d="M351,233 L351,255 L372,247 Z" fill="#3a2c1e"/>
+      </g>
+      <g stroke="#f7dca0" stroke-width="1.5" opacity="0.35" fill="none">
+        <path d="M370,290 Q400,286 430,290"/>
+        <path d="M360,304 Q400,298 440,304"/>
+        <path d="M350,318 Q400,310 450,318"/>
+      </g>
+    </svg>
+    <figcaption data-bn>চন্দননগর স্ট্র্যান্ড, গঙ্গার তীরে সূর্যাস্তের একটি অলঙ্করণ</figcaption>
+    <figcaption data-en>An illustration of sunset by the Hooghly, Chandannagar Strand</figcaption>
+  </figure>
+
+  <div class="article-body" data-bn>
+    <p>বিকেলের দিকে স্ট্র্যান্ডে গেলে একটা আলাদা রকমের নিস্তব্ধতা টের পাওয়া যায়। গঙ্গার জলে তখন আকাশের রংটা গলে গলে পড়ে — কমলা, বেগুনি, তারপর ধীরে ধীরে ছাই রং। নদীর পাড় ধরে হাঁটতে হাঁটতে চোখে পড়ে সারি সারি পুরনো ফরাসি বাড়ি, তাদের বন্ধ জানালা আর ভাঙা বারান্দার রেলিং — যেন প্রতিটা দেওয়ালে দুশো বছরের গল্প জমে আছে।</p>
+    <p>এক-দুটো ডিঙি নৌকা তখনও জলে ভাসছে, জেলেরা দিনের শেষ কাজ সারছে। পাড়ে বসে থাকা বুড়ো মানুষগুলো, ছোট ছেলেমেয়েদের ছুটোছুটি, চায়ের ভাঁড়ের টুংটাং শব্দ — সব মিলিয়ে একটা অদ্ভুত শান্তি। এই শহরে বড় হওয়ার একটা সুবিধে, রোজকার এই ছোট্ট দৃশ্যগুলোই মনে হয় সবচেয়ে বড় সম্পদ।</p>
+    <p>আজ হঠাৎ মনে হলো, এই বিকেলটা কোথাও লিখে রাখা দরকার। তাই এই ব্লগের প্রথম আসল লেখা হিসেবে বেছে নিলাম স্ট্র্যান্ডের এই একটা সাধারণ বিকেলকেই।</p>
+  </div>
+  <div class="article-body" data-en>
+    <p>Visit the Strand in the late afternoon and there's a particular kind of quiet to it. The sky melts into the Hooghly's water in shades of orange, then violet, then slowly, ash grey. Walking along the riverbank, row after row of old French houses come into view — shuttered windows, cracked balcony railings — as if two hundred years of stories are held in each wall.</p>
+    <p>A couple of small boats are still out on the water, fishermen finishing the day's last work. Old men sitting by the water, children running about, the clink of tea cups — it all adds up to a strange kind of peace. Growing up in this town, these small everyday scenes end up feeling like the real wealth of it.</p>
+    <p>It struck me today that this evening deserved to be written down somewhere. So for the first real post on this blog, I picked exactly that — one ordinary evening on the Strand.</p>
   </div>
 </section>
 
@@ -376,9 +483,9 @@
     document.body.classList.add('lang-'+lang);
     document.getElementById('btn-bn').classList.toggle('active', lang==='bn');
     document.getElementById('btn-en').classList.toggle('active', lang==='en');
-    document.documentElement.lang = lang;
+     document.documentElement.lang = lang;
   }
 </script>
 
 </body>
-</html>
+        </html>
