@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chayan Ghosh | চায়ন ঘোষ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&family=Hind+Siliguri:wght@300;400;500;600;700&family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night: #101a30;
+    --night-deep: #0a1222;
+    --paper: #f5ecd8;
+    --paper-dim: #e9ddc0;
+    --brass: #cd9a3e;
+    --brass-bright: #f0c674;
+    --maroon: #7a2e2e;
+    --teal: #2e5850;
+    --ink: #241a10;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Hind Siliguri', sans-serif;
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  h1,h2,h3, .display{
+    font-family:'Tiro Bangla', serif;
+    font-weight:400;
+  }
+  [lang="en"] h1,[lang="en"] h2,[lang="en"] h3{ font-family:'Cormorant Garamond', serif; font-weight:600; }
+  .eyebrow{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    font-size:0.8rem;
+    color:var(--brass);
+  }
+
+  /* ===== LANG TOGGLE ===== */
+  .lang-toggle{
+    display:inline-flex;
+    border:1px solid rgba(240,198,116,0.5);
+    border-radius:999px;
+    overflow:hidden;
+    font-size:0.82rem;
+  }
+  .lang-toggle button{
+    background:transparent;
+    border:none;
+    color:var(--paper-dim);
+    padding:0.35rem 0.9rem;
+    cursor:pointer;
+    font-family:'Hind Siliguri', sans-serif;
+    transition:background 0.2s, color 0.2s;
+  }
+  .lang-toggle button.active{
+    background:var(--brass-bright);
+    color:var(--night-deep);
+    font-weight:600;
+  }
+  [data-en]{ display:none; }
+  body.lang-en [data-bn]{ display:none; }
+  body.lang-en [data-en]{ display:block; }
+  body.lang-en span[data-en], body.lang-en a[data-en]{ display:inline; }
+
+  /* ===== HERO ===== */
+  .hero{
+    background:linear-gradient(180deg, var(--night-deep) 0%, var(--night) 70%, var(--night) 100%);
+    color:var(--paper);
+    padding:2.5rem 6vw 5rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:0; left:0; right:0;
+    height:60px;
+    background:linear-gradient(180deg, transparent, var(--paper));
+  }
+  nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1100px;
+    margin:0 auto 3.5rem;
+    position:relative;
+    z-index:2;
+    flex-wrap:wrap;
+    gap:1rem;
+  }
+  .brand{
+    font-family:'Tiro Bangla', serif;
+    font-size:1.3rem;
+    color:var(--brass-bright);
+  }
+  .nav-right{ display:flex; align-items:center; gap:1.6rem; }
+  nav a{
+    color:var(--paper-dim);
+    text-decoration:none;
+    font-size:0.95rem;
+    transition:color 0.25s;
+  }
+  nav a:hover{ color:var(--brass-bright); }
+
+  .lights{
+    max-width:1100px;
+    margin:0 auto 2.5rem;
+    position:relative;
+    z-index:2;
+    height:46px;
+  }
+  .lights svg{ width:100%; height:100%; display:block; }
+  .bulb{ animation: twinkle 3.2s ease-in-out infinite; transform-origin:center; }
+  .bulb:nth-child(2n){ animation-delay:0.6s; }
+  .bulb:nth-child(3n){ animation-delay:1.2s; }
+  .bulb:nth-child(5n){ animation-delay:1.9s; }
+  @keyframes twinkle{
+    0%, 100%{ opacity:0.55; filter:drop-shadow(0 0 2px currentColor); }
+    50%{ opacity:1; filter:drop-shadow(0 0 6px currentColor); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .bulb{ animation:none; opacity:0.9; }
+  }
+
+  .hero-content{
+    max-width:1100px;
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.4rem);
+    line-height:1.15;
+    color:var(--paper);
+  }
+  .hero h1 span{ color:var(--brass-bright); }
+  .hero-meta{
+    margin-top:1.4rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem 2rem;
+    font-size:0.98rem;
+    color:var(--paper-dim);
+  }
+  .hero-meta a{ color:var(--paper-dim); text-decoration:none; border-bottom:1px solid rgba(240,198,116,0.4); }
+  .hero-meta a:hover{ color:var(--brass-bright); border-color:var(--brass-bright); }
+  .hero-tag{
+    max-width:560px;
+    margin-top:1.6rem;
+    font-size:1.05rem;
+    color:var(--paper-dim);
+  }
+
+  section{
+    max-width:1100px;
+    margin:0 auto;
+    padding:4rem 6vw;
+  }
+  .section-head{ margin-bottom:2.4rem; }
+  .section-head .eyebrow{ display:block; margin-bottom:0.4rem; }
+  .section-head h2{ font-size:2rem; color:var(--ink); }
+
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1.4fr;
+    gap:3rem;
+    align-items:start;
+  }
+  .about-card{
+    background:var(--night);
+    color:var(--paper-dim);
+    padding:2rem;
+    border-left:4px solid var(--brass);
+  }
+  .about-card b{ color:var(--brass-bright); }
+  .about-text p{ margin-bottom:1rem; font-size:1.05rem; }
+
+  .posts-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1.6rem;
+  }
+  .post-card{
+    background:var(--paper-dim);
+    border:1px solid rgba(36,26,16,0.12);
+    padding:1.6rem;
+    display:flex;
+    flex-direction:column;
+    gap:0.7rem;
+    transition:transform 0.25s, box-shadow 0.25s;
+  }
+  .post-card:hover{ transform:translateY(-4px); box-shadow:0 10px 24px rgba(36,26,16,0.14); }
+  .post-tag{
+    font-size:0.75rem;
+    letter-spacing:0.05em;
+    color:var(--maroon);
+    font-weight:600;
+    text-transform:uppercase;
+  }
+  .post-card h3{ font-size:1.3rem; color:var(--ink); }
+  .post-card p{ font-size:0.95rem; color:#4a3f30; }
+  .post-card .date{ font-size:0.82rem; color:#8a7c63; margin-top:auto; }
+
+  footer{
+    background:var(--night-deep);
+    color:var(--paper-dim);
+    padding:3.5rem 6vw 2.5rem;
+  }
+  .footer-inner{
+    max-width:1100px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:2rem;
+  }
+  .footer-inner h2{ color:var(--paper); font-size:1.8rem; }
+  .contact-list{
+    list-style:none;
+    margin-top:1.2rem;
+  }
+  .contact-list li{ margin-bottom:0.6rem; font-size:1rem; }
+  .contact-list a{ color:var(--brass-bright); text-decoration:none; }
+  .contact-list a:hover{ text-decoration:underline; }
+  .foot-note{
+    width:100%;
+    text-align:center;
+    margin-top:2.5rem;
+    padding-top:1.5rem;
+    border-top:1px solid rgba(245,236,216,0.12);
+    font-size:0.85rem;
+    color:#8f8a78;
+  }
+
+  @media (max-width:760px){
+    .about-grid{ grid-template-columns:1fr; }
+    .posts-grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body class="lang-bn">
+
+<header class="hero">
+  <nav>
+    <div class="brand">চায়ন ঘোষ <span data-en>· Chayan Ghosh</span></div>
+    <div class="nav-right">
+      <a href="#about" data-bn>পরিচয়</a><a href="#about" data-en>About</a>
+      <a href="#posts" data-bn>লেখা</a><a href="#posts" data-en>Posts</a>
+      <a href="#contact" data-bn>যোগাযোগ</a><a href="#contact" data-en>Contact</a>
+      <div class="lang-toggle">
+        <button id="btn-bn" class="active" onclick="setLang('bn')">বাংলা</button>
+        <button id="btn-en" onclick="setLang('en')">English</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="lights" aria-hidden="true">
+    <svg viewBox="0 0 1100 46" preserveAspectRatio="none">
+      <path d="M0,6 Q 275,46 550,6 Q 825,-30 1100,6" fill="none" stroke="#3a3220" stroke-width="1.5"/>
+      <g>
+        <circle class="bulb" cx="40" cy="9" r="5" fill="#f0c674" style="color:#f0c674"/>
+        <circle class="bulb" cx="140" cy="18" r="5" fill="#e0654f" style="color:#e0654f"/>
+        <circle class="bulb" cx="240" cy="27" r="5" fill="#5fae8f" style="color:#5fae8f"/>
+        <circle class="bulb" cx="340" cy="33" r="5" fill="#f0c674" style="color:#f0c674"/>
+        <circle class="bulb" cx="440" cy="24" r="5" fill="#8f7fd6" style="color:#8f7fd6"/>
+        <circle class="bulb" cx="550" cy="13" r="5" fill="#e0654f" style="color:#e0654f"/>
+        <circle class="bulb" cx="650" cy="2" r="5" fill="#f0c674" style="color:#f0c674"/>
+        <circle class="bulb" cx="750" cy="-6" r="5" fill="#5fae8f" style="color:#5fae8f"/>
+        <circle class="bulb" cx="850" cy="-8" r="5" fill="#f0c674" style="color:#f0c674"/>
+        <circle class="bulb" cx="950" cy="-2" r="5" fill="#8f7fd6" style="color:#8f7fd6"/>
+        <circle class="bulb" cx="1050" cy="9" r="5" fill="#e0654f" style="color:#e0654f"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <span class="eyebrow" data-bn>চন্দননগর, পশ্চিমবঙ্গ থেকে লেখা</span>
+    <span class="eyebrow" data-en>Written from Chandannagar, West Bengal</span>
+
+    <h1 data-bn>মনের কথা, <span>আলোর শহরের</span> ভাষায়</h1>
+    <h1 data-en>Words from <span>the City of Lights</span></h1>
+
+    <p class="hero-tag" data-bn>গঙ্গার পাড়ে বসে, স্ট্র্যান্ডের হাওয়ায় দাঁড়িয়ে — চায়ন ঘোষের ব্যক্তিগত ব্লগ। জীবন, শহর আর ছোট ছোট পর্যবেক্ষণের গল্প।</p>
+    <p class="hero-tag" data-en>Written by the river, in the breeze off the Strand — Chayan Ghosh's personal blog. Notes on life, the city, and small everyday observations.</p>
+
+    <div class="hero-meta">
+      <span data-bn>📍 চন্দননগর</span><span data-en>📍 Chandannagar</span>
+      <a href="mailto:chayan.sg@gmail.com">✉️ chayan.sg@gmail.com</a>
+      <a href="tel:+918240822769">📞 8240822769</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="about-grid">
+    <div class="about-card">
+      <p><b>চায়ন ঘোষ <span data-en>· Chayan Ghosh</span></b></p>
+      <p style="margin-top:0.6rem;" data-bn>চন্দননগর, পশ্চিমবঙ্গ</p>
+      <p style="margin-top:0.6rem;" data-en>Chandannagar, West Bengal</p>
+      <p style="margin-top:1.2rem; font-size:0.92rem;" data-bn>এই শহরের ফরাসি স্থাপত্য, গঙ্গার স্ট্র্যান্ড, আর জগদ্ধাত্রী পুজোর বিখ্যাত আলোকসজ্জার মতোই — এই ব্লগেও ছোট ছোট আলো জ্বালানোর চেষ্টা।</p>
+      <p style="margin-top:1.2rem; font-size:0.92rem;" data-en>Like this town's French architecture, its riverside Strand, and its famous Jagaddhatri Puja lights — this blog is a small attempt to light a few lamps of its own.</p>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow" data-bn>পরিচয়</span>
+      <span class="eyebrow" data-en>About</span>
+      <h2 style="margin:0.4rem 0 1rem;" data-bn>এই ব্লগ সম্পর্কে</h2>
+      <h2 style="margin:0.4rem 0 1rem;" data-en>About this blog</h2>
+      <p data-bn>এটি চায়নের ব্যক্তিগত ব্লগ — যেখানে থাকবে চন্দননগরের অলিগলি নিয়ে গল্প, নিজের ভাবনা, বই-সিনেমার আলোচনা, আর দিনযাপনের টুকরো টুকরো মুহূর্ত। লেখাগুলো নিয়মিত যোগ হবে, তাই মাঝেমাঝেই ফিরে আসতে ভুলবেন না।</p>
+      <p data-en>This is Chayan's personal blog — stories from the lanes of Chandannagar, personal reflections, notes on books and films, and small everyday moments. New posts will be added regularly, so do check back.</p>
+      <p data-bn>কোনো লেখা নিয়ে মতামত জানাতে চাইলে, বা যোগাযোগ করতে চাইলে নিচের ইমেল বা ফোন নম্বরে সরাসরি জানাতে পারেন।</p>
+      <p data-en>To share thoughts on a post, or just to say hello, reach out directly by email or phone below.</p>
+    </div>
+  </div>
+</section>
+
+<section id="posts">
+  <div class="section-head">
+    <span class="eyebrow" data-bn>সাম্প্রতিক</span>
+    <span class="eyebrow" data-en>Recent</span>
+    <h2 data-bn>নতুন লেখা</h2>
+    <h2 data-en>New posts</h2>
+  </div>
+  <div class="posts-grid">
+    <div class="post-card">
+      <span class="post-tag" data-bn>শহর</span><span class="post-tag" data-en>City</span>
+      <h3 data-bn>স্ট্র্যান্ডের বিকেল</h3>
+      <h3 data-en>An Evening on the Strand</h3>
+      <p data-bn>গঙ্গার পাড় ধরে হাঁটতে হাঁটতে চন্দননগরের পুরনো ফরাসি বাড়িগুলো নিয়ে কিছু ভাবনা।</p>
+      <p data-en>Some thoughts on Chandannagar's old French houses, while walking along the riverbank.</p>
+      <span class="date" data-bn>শীঘ্রই আসছে</span><span class="date" data-en>Coming soon</span>
+    </div>
+    <div class="post-card">
+      <span class="post-tag" data-bn>ব্যক্তিগত</span><span class="post-tag" data-en>Personal</span>
+      <h3 data-bn>প্রথম লেখা</h3>
+      <h3 data-en>The First Post</h3>
+      <p data-bn>এই ব্লগ শুরু করার পেছনের গল্প, আর আগামী দিনে কী কী লেখার ইচ্ছে আছে তার একটা ঝলক।</p>
+      <p data-en>The story behind starting this blog, and a glimpse of what's planned ahead.</p>
+      <span class="date" data-bn>শীঘ্রই আসছে</span><span class="date" data-en>Coming soon</span>
+    </div>
+    <div class="post-card">
+      <span class="post-tag" data-bn>উৎসব</span><span class="post-tag" data-en>Festival</span>
+      <h3 data-bn>আলোর রাত</h3>
+      <h3 data-en>A Night of Lights</h3>
+      <p data-bn>জগদ্ধাত্রী পুজোর আলোকসজ্জা নিয়ে ছোটবেলার স্মৃতি ও আজকের অনুভূতি।</p>
+      <p data-en>Childhood memories and present-day thoughts on the Jagaddhatri Puja light displays.</p>
+      <span class="date" data-bn>শীঘ্রই আসছে</span><span class="date" data-en>Coming soon</span>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-inner">
+    <div>
+      <h2 data-bn>যোগাযোগ করুন</h2>
+      <h2 data-en>Get in touch</h2>
+      <ul class="contact-list">
+        <li>✉️ <a href="mailto:chayan.sg@gmail.com">chayan.sg@gmail.com</a></li>
+        <li>📞 <a href="tel:+918240822769">8240822769</a></li>
+        <li><span data-bn>📍 চন্দননগর, পশ্চিমবঙ্গ</span><span data-en>📍 Chandannagar, West Bengal</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="foot-note" data-bn>© 2026 চায়ন ঘোষ — চন্দননগর থেকে লেখা</p>
+  <p class="foot-note" data-en>© 2026 Chayan Ghosh — written from Chandannagar</p>
+</footer>
+
+<script>
+  function setLang(lang){
+    document.body.classList.remove('lang-bn','lang-en');
+    document.body.classList.add('lang-'+lang);
+    document.getElementById('btn-bn').classList.toggle('active', lang==='bn');
+    document.getElementById('btn-en').classList.toggle('active', lang==='en');
+    document.documentElement.lang = lang;
+  }
+</script>
+
+</body>
+</html>
